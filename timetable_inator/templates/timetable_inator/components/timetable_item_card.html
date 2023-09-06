@@ -1,0 +1,11 @@
+{% extends 'timetable_inator/components/card.html' %}
+{% block card_body %}
+    {% if timetable %}
+        <a class="stretched-link" href="{% url 'timetable_item' timetable.id %}"></a>
+        <h5 class="card-title">{{ timetable.title }}</h5>
+    {% else %}
+        <a class="stretched-link" href="{% url 'timetable_item' %}"></a>
+        <h5 class="card-title">New..</h5>
+        <p class="card-text">Click to create a new timetable.</p>
+    {% endif %}
+{% endblock card_body %}
